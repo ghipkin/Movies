@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "DbUp": {
+      "commandName": "Project",
+      "commandLineArgs": "\"Integrated Security=SSPI;Persist Security Info=False;database=Movies;Server=Gareths-Desktop;Trusted_connection=true;Database=Movies;TrustServerCertificate=true\"",
+      "workingDirectory": "C:\\Users\\Gareth\\Desktop"
+    }
+  }
+}
