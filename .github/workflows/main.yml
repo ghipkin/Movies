@@ -6,6 +6,25 @@ permissions:
       contents: read
       
 jobs: 
+  build-solution:
+      runs-on: windows-latest
+      steps:
+        - name: Build solution s
+          uses: actions/checkout@v4.1.1
+        - name: Setup .NET Core SDK 8.0
+          uses: actions/setup-dotnet@v1
+          with:
+            dotnet-version: 8.0
+    
+        - name: Restore packages
+          run: dotnet restore
+
+        - name: Build app
+          run: dotnet build --configuration Release --no-restore
+
+        - name: Test app
+          run: dotnet test --no-build
+          
   Windows-latest:
       runs-on: windows-latest
       steps:
