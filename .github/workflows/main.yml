@@ -26,6 +26,7 @@ jobs:
           run: dotnet test --configuration Release --no-build
           
         - name: Build the Docker image
+          working-directory: Movies
           run: docker build . -t ghipkin/movies:latest
           
         - name: Log into Docker Hub
