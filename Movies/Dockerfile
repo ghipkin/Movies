@@ -2,11 +2,21 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
-WORKDIR ./Movies/app
 EXPOSE 8080
 EXPOSE 8081
 
-FROM base AS final
-WORKDIR ./Movies/app
-COPY --from=publish ./Movies/app/publish .
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY ["Movies.csproj", "."]
+RUN dotnet restore
+COPY . . 
+WORKDIR /src/
+RUN dotnet build "./Movies.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish -c release -o /app/publish /p:UseAppHost=false
+
+FROM build
+WORKDIR /app
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Movies.dll"]
