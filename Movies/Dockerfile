@@ -9,7 +9,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["./Movies/Movies.csproj", "Movies/"]
+COPY ["/Movies/Movies.csproj", "Movies/"]
 RUN dotnet restore "./Movies/./Movies.csproj"
 COPY . .
 WORKDIR "/src/Movies"
