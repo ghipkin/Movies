@@ -25,13 +25,13 @@ jobs:
         - name: Test app
           run: dotnet test --configuration Release --no-build
           
-        - name: Build the Docker image
-          working-directory: ./Movies
-          run: docker build . -t ghipkin/movies:latest
-          
         - name: publish app
           working-directory: ./Movies
           run: dotnet publish -c Release -o /app/publish /p:UseAppHost=false
+          
+        - name: Build the Docker image
+          working-directory: ./Movies
+          run: docker build . -t ghipkin/movies:latest
           
         - name: Log into Docker Hub
           uses: docker/login-action@v2
