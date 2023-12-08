@@ -27,7 +27,7 @@ jobs:
           
         - name: publish app
           working-directory: ./Movies
-          run: dotnet publish -c Release -o /app/publish /p:UseAppHost=false
+          run: dotnet publish -c Release -o ./app/publish /p:UseAppHost=false
           
         - name: Build the Docker image
           working-directory: ./Movies
