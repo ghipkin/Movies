@@ -29,6 +29,10 @@ jobs:
           working-directory: ./Movies
           run: docker build . -t ghipkin/movies:latest
           
+        - name: publish app
+          working-directory: ./Movies
+          run: dotnet publish -c Release -o /app/publish /p:UseAppHost=false
+          
         - name: Log into Docker Hub
           uses: docker/login-action@v2
           with:
