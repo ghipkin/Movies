@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies", "Movies\Movies.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.Test", "Movies.Test\Movies.Test.csproj", "{F62261B3-B9CD-4830-9A77-0C535D70EC5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbUp", "DbUp\DbUp.csproj", "{3B0510E4-A9A5-40E9-AC0E-C583F221E8BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbUp", "DbUp\DbUp.csproj", "{3B0510E4-A9A5-40E9-AC0E-C583F221E8BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
