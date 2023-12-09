@@ -43,7 +43,7 @@ jobs:
             password: ${{ secrets.DOCKERHUB_TOKEN }}
             
         - name: Push the images to Docker Hub
-          run: docker push ghipkin/Movies
+          run: docker push ghipkin/movies
   Windows-latest:
       runs-on: windows-latest
       steps:
