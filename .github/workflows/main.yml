@@ -44,9 +44,8 @@ jobs:
             
         - name: Push the images to Docker Hub
           run: docker push ghipkin/movies
-  Windows-latest:
-      runs-on: windows-latest
-      steps:
+
+
         - name: OIDC Login to Azure Public Cloud with AzPowershell (enableAzPSSession true)
           uses: azure/login@v1
           with:
@@ -61,3 +60,5 @@ jobs:
              inlineScript: |
                Get-AzResourceGroup
              azPSVersion: "latest"
+
+
