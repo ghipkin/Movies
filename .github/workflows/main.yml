@@ -7,7 +7,7 @@ permissions:
       
 jobs: 
   build-solution:
-      runs-on: ubuntu-latest
+      runs-on: windows-latest
       steps:
         - name: Build solution s
           uses: actions/checkout@v4.1.1
